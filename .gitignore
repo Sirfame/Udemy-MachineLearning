@@ -1,7 +1,7 @@
 # Build and Release Folders
 .idea
 .DS_Store
-
+.pkg
 bin/
 bin-debug/
 bin-release/
