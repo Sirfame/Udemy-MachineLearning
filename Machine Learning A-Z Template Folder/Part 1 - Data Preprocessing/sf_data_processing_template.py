@@ -21,7 +21,7 @@ On the right of the comma, we have a colon -1, meaning we take all the columns e
 
 """
 
-y = dataset.iloc[:, :3].values
+y = dataset.iloc[:, 3].values
 
 
 # taking care of missing data.
@@ -39,3 +39,19 @@ The third parameter is either 1 or 0, 1 being the mean if the rows, and 0 being 
 imputer = imputer.fit(X[:, 1:3]) #upper bound is excluded.
 
 X[:, 1:3] = imputer.transform(X[:, 1:3])
+
+
+# Encoding categorical data
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+labelencoder_X = LabelEncoder()
+X[:, 0] = labelencoder_X.fit_transform(X[:, 0]) # This line takes the labelencoder_X object and fits it to country
+# Now this line will replace the values with the encoded values.
+
+onehotencoder = OneHotEncoder(categorical_features = [0])
+
+X = onehotencoder.fit_transform(X).toarray()
+
+
+labelencoder_Y = LabelEncoder()
+y = labelencoder_Y.fit_transform(y)
+
