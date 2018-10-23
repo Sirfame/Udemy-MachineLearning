@@ -26,4 +26,12 @@ dataset$Purchased = factor(dataset$Purchased,
 
 
 # Splitting the dataset into the Training set and Test set
-#10:45
+# 10:45
+# install.packages('caTools')
+library(caTools)
+set.seed(123)
+
+split = sample.split(dataset$Purchased, SplitRatio = 0.8) # this will return true/false for each observation 
+
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
