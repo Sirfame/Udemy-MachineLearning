@@ -57,3 +57,4 @@ y = labelencoder_Y.fit_transform(y)
 
 # Splitting the dataset into the Training Set and Test Set
 from sklearn.cross_validation import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0) # test size 0.5 means half the data set is used for test.

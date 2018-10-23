@@ -23,3 +23,7 @@ dataset$Country = factor(dataset$Country,
 dataset$Purchased = factor(dataset$Purchased,
                          levels = c('No', 'Yes'), #c creates a vector
                          labels = c(0, 1))
+
+
+# Splitting the dataset into the Training set and Test set
+#10:45
