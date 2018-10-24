@@ -58,3 +58,10 @@ y = labelencoder_Y.fit_transform(y)
 # Splitting the dataset into the Training Set and Test Set
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0) # test size 0.5 means half the data set is used for test.
+
+
+# Feature scaling.
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()# the reason why we specify X here is because we might need to create another StandardScaler object for the dependent variable.
+X_train = sc_X.fit_transform(X_train) # for training set, we need to fit AND transform, but for our test set, we only transform the data.
+X_test = sc_X.transform(X_test)
