@@ -1,10 +1,10 @@
 # Build and Release Folders
-.idea
-.DS_Store
-.zip
-.pdf
-.csv
-.pkg
+*.idea
+*.DS_Store
+*.zip
+*.pdf
+*.csv
+*.pkg
 bin/
 bin-debug/
 bin-release/
