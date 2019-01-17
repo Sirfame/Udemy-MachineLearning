@@ -5,7 +5,7 @@ dataset = read.csv('Data.csv')
 # dataset = dataset[, 2:3] Uncomment when needed to take a subset of our dataset
 
 # Splitting the dataset into the Training set and Test set
-# install.packages('caTools') (Uncomment here to install package)
+# install.packages('caTools') # (Uncomment here to install package)
 library(caTools)
 set.seed(123)
 split = sample.split(dataset$Purchased, SplitRatio = 0.8)
