@@ -56,3 +56,4 @@ plt.show()
 lin_reg.predict(6.5)
 
 # Predicting a new result with Polynomial Regression Model
+lin_reg2.predict(poly_reg.fit_transform(6.5))
