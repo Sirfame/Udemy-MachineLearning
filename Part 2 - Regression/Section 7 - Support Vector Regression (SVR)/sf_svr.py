@@ -1,4 +1,4 @@
-# Polynomial Regression Template
+#SVR
 
 # Importing the libraries
 import numpy as np
@@ -18,21 +18,23 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 # Feature Scaling
 # Leave commented since most libraries we use to build non linear regression models do not
 # require to feature scale manually
-"""from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
-X_train = sc_X.fit_transform(X_train)
-X_test = sc_X.transform(X_test)
 sc_y = StandardScaler()
-y_train = sc_y.fit_transform(y_train)"""
+X = sc_X.fit_transform(X)
+y = sc_y.fit_transform(y)
 
-# Fitting the Regression model to the dataset
+# Fitting the SVR model to the dataset
 # Create regressor object here from appropriate regression library
-regressor = 
+from sklearn.svm import SVR
+regressor = SVR(kernel = 'rbf')
+regressor.fit(X, y)
 
-# Predicting a new result with Regression Model
-y_pred = regressor.predict(6.5)
+# Predicting a new result with SVR Model
+y_pred = sc_y.inverse_transform(regressor.predict(sc_X.transform(np.array([[6.5]]))))
 
-# Visualizing the Regression results
+
+# Visualizing the SVR results
 plt.scatter(X, y, color = 'red')
 plt.plot(X, regressor.predict(X), color = 'blue')
 plt.title('Truth or bluff (Regression Model)')
@@ -40,7 +42,7 @@ plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
 
-# Visualizing the Regression results (For hire resolution and smoother curve)
+# Visualizing the SVR results (For hire resolution and smoother curve)
 X_grid = np.arange(min(X), max(X), 0.1)
 X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(X, y, color = 'red')
