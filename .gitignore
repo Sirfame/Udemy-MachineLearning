@@ -1,3 +1,7 @@
+# R history & data
+*.Rhistory
+*.RData
+
 # Build and Release Folders
 *.idea
 *.DS_Store
