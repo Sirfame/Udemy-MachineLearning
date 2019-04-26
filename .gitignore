@@ -2,6 +2,8 @@
 *.Rhistory
 *.RData
 
+CNNdataset/
+
 # Build and Release Folders
 *.idea
 *.DS_Store
